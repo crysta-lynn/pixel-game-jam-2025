@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kw0vr7flemii"
-path="res://.godot/imported/Dead_terrain_objects.png-8034bd4b1cbfa005ed27ae4134659c73.ctex"
+uid="uid://bg4e0larweivl"
+path="res://.godot/imported/Placeholder_guy_gh.png-55fa7814d7035facc58a10c585643c1c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Dead_terrain_objects.png"
-dest_files=["res://.godot/imported/Dead_terrain_objects.png-8034bd4b1cbfa005ed27ae4134659c73.ctex"]
+source_file="res://Assets/Sprites/Placeholder_guy_gh.png"
+dest_files=["res://.godot/imported/Placeholder_guy_gh.png-55fa7814d7035facc58a10c585643c1c.ctex"]
 
 [params]
 
