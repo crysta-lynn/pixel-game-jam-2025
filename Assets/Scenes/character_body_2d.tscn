@@ -280,8 +280,7 @@ script = ExtResource("1_g5ct4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_36gbj")
-animation = &"alive walk right"
-frame_progress = 0.475707
+animation = &"alive walk down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
