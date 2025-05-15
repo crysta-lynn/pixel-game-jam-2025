@@ -12,9 +12,7 @@ var living := true
 
 func _physics_process(delta: float) -> void:
 	player_movement(delta)
-	if Input.is_action_just_pressed("swapWorld"):
-		living = !living
-		swapMap()
+	
 
 func player_movement(delta):
 	if Input.is_action_pressed("right"):
@@ -48,13 +46,22 @@ func player_movement(delta):
 	else:
 		velocity.x = 0
 		velocity.y = 0
-		if isLiving():
-			animated_sprite_2d.stop()
+		animated_sprite_2d.stop()
 	move_and_slide()
-	
+
 func isLiving():
 	return living
 
-func swapMap():
-	living_land.visible = living
-	ghost_land.visible = !living
+func swapChar():
+	if isLiving():
+		animated_sprite_2d.play("alive walk down")
+		animated_sprite_2d.stop()
+	else:
+		animated_sprite_2d.play("ghost walk down")
+		animated_sprite_2d.stop()
+
+
+func _on_game_world_change() -> void:
+	living = !living
+	if not (Input.is_action_pressed("down") or Input.is_action_pressed("left") or Input.is_action_pressed("right") or Input.is_action_pressed("up")):
+			swapChar()
