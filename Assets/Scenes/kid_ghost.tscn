@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://bmbcfgbhw6mv5"]
+
+[ext_resource type="Texture2D" uid="uid://di8rftsme2eu1" path="res://Assets/Sprites/ghostSprites.png" id="1_8n6a7"]
+[ext_resource type="Script" uid="uid://cghxjkk2hikb8" path="res://Assets/Scripts/kid_ghost.gd" id="1_g8v0v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_peea3"]
+atlas = ExtResource("1_8n6a7")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7a58h"]
+atlas = ExtResource("1_8n6a7")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8n6a7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_peea3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7a58h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_peea3"]
+radius = 2.99998
+height = 11.9999
+
+[node name="kid_ghost" type="StaticBody2D"]
+y_sort_enabled = true
+script = ExtResource("1_g8v0v")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
+sprite_frames = SubResource("SpriteFrames_8n6a7")
+frame_progress = 0.598278
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 13)
+rotation = -1.56729
+shape = SubResource("CapsuleShape2D_peea3")

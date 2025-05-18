@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://cgbrc6hoyiwre"]
+
+[ext_resource type="Texture2D" uid="uid://di8rftsme2eu1" path="res://Assets/Sprites/ghostSprites.png" id="1_3n02c"]
+[ext_resource type="Script" uid="uid://cdlh7pxrorg13" path="res://Assets/Scripts/lady_ghost.gd" id="1_bxo8y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxo8y"]
+atlas = ExtResource("1_3n02c")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_egctq"]
+atlas = ExtResource("1_3n02c")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_op63o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bxo8y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_egctq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gfaov"]
+radius = 3.96116
+height = 15.9799
+
+[node name="StaticBody2D" type="StaticBody2D"]
+y_sort_enabled = true
+script = ExtResource("1_bxo8y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
+sprite_frames = SubResource("SpriteFrames_op63o")
+frame_progress = 0.178081
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.98023e-08, 12)
+rotation = 4.67616
+shape = SubResource("CapsuleShape2D_gfaov")

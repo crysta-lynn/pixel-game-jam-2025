@@ -12,6 +12,7 @@ var living := true
 
 func _physics_process(delta: float) -> void:
 	player_movement(delta)
+	set_ghost_collison()
 	
 
 func player_movement(delta):
@@ -52,7 +53,7 @@ func player_movement(delta):
 func isLiving():
 	return living
 
-func swapChar():
+func swapCharIdle():
 	if isLiving():
 		animated_sprite_2d.play("alive walk down")
 		animated_sprite_2d.stop()
@@ -60,8 +61,13 @@ func swapChar():
 		animated_sprite_2d.play("ghost walk down")
 		animated_sprite_2d.stop()
 
+func set_ghost_collison():
+	if isLiving():
+		collision_mask = 1
+	else:
+		collision_mask = 2
 
-func _on_game_world_change() -> void:
+func _on_game_change_world_state() -> void:
 	living = !living
 	if not (Input.is_action_pressed("down") or Input.is_action_pressed("left") or Input.is_action_pressed("right") or Input.is_action_pressed("up")):
-			swapChar()
+			swapCharIdle() # Replace with function body.

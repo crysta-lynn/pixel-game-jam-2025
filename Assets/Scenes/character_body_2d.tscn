@@ -272,19 +272,19 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cyjxs"]
-radius = 3.0
-height = 24.0
+radius = 2.0
+height = 7.99836
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_g5ct4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_36gbj")
-animation = &"alive walk down"
+animation = &"alive walk up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(-1, 4)
+position = Vector2(-1, 14)
+rotation = 1.55057
 shape = SubResource("CapsuleShape2D_cyjxs")
 
 [node name="Camera2D" type="Camera2D" parent="."]
