@@ -64,8 +64,10 @@ func swapCharIdle():
 func set_ghost_collison():
 	if isLiving():
 		collision_mask = 1
+		collision_layer = 1
 	else:
 		collision_mask = 2
+		collision_layer = 2
 
 func _on_game_change_world_state() -> void:
 	living = !living
