@@ -9,7 +9,24 @@ lady ghost: Hi!
 => END
 
 ~ kidGhost
-Kid ghost: HEY!!!
-- bye
-Kid ghost: BYE
-=> END
+if kid_ghost.questReceived == false
+	Kid: Hey! Hey!! Who are you?? Can you help me find something??
+	- no
+		Kid: You can do it! I beleive in you!!
+	- yes
+	Kid: I am trying to find something pink!! My mom loved pink!! But theres nothing pink in this whole place! Everything is dark and blue.
+	- What are you going to do with the pink thing?
+		Kid: I want to give it to Mom, I didn't get to give her a birthday present before I left! so I need to give her something!!
+		- I can try to help you
+		
+	- I'll do my best
+	Kid: Thank you!!
+	=> END
+elif kid_ghost.wishFulfilled == false
+	Kid: Hey!! thank you for helping me!!! Have you found anything pink yet??
+	if flower_collectable.collected
+		- Yes
+			Kid: You have!!! Thats amazing!! Thank you!!
+			set kid_ghost.questReceived = true
+	-no
+	Kid: Thats ok! I havent been able to find anything either. Have you checked the far left side of the cemetary? I havent looked there yet.

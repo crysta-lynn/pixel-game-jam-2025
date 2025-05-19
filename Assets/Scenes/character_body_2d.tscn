@@ -275,7 +275,7 @@ animations = [{
 radius = 2.0
 height = 7.99836
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_g5ct4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -288,4 +288,4 @@ rotation = 1.55057
 shape = SubResource("CapsuleShape2D_cyjxs")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
+zoom = Vector2(2.5, 2.5)

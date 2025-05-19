@@ -12,7 +12,7 @@ var living := true
 
 func _physics_process(delta: float) -> void:
 	player_movement(delta)
-	set_ghost_collison()
+	
 	
 
 func player_movement(delta):
@@ -63,13 +63,16 @@ func swapCharIdle():
 
 func set_ghost_collison():
 	if isLiving():
+		print("collision layer and mask both = 1")
 		collision_mask = 1
 		collision_layer = 1
 	else:
+		print("collision layer = 3 and mask =2")
 		collision_mask = 2
-		collision_layer = 2
+		collision_layer = 3
 
 func _on_game_change_world_state() -> void:
 	living = !living
 	if not (Input.is_action_pressed("down") or Input.is_action_pressed("left") or Input.is_action_pressed("right") or Input.is_action_pressed("up")):
-			swapCharIdle() # Replace with function body.
+			swapCharIdle()
+	set_ghost_collison()
